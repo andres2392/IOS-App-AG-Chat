@@ -87,7 +87,6 @@
 				7E2C6D1F28D3C2B800DD7E27 /* Core */,
 				7E2C6D1428D3A8A800DD7E27 /* Util */,
 				7E2C6CE428D390AE00DD7E27 /* AGChatApp.swift */,
-				7E2C6CE528D390AE00DD7E27 /* LoginView.swift */,
 				7E2C6D0528D3A48600DD7E27 /* GoogleService-Info.plist */,
 				7E2C6CE628D390AF00DD7E27 /* Assets.xcassets */,
 			);
@@ -130,6 +129,7 @@
 		7E2C6D1F28D3C2B800DD7E27 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7E2C6CE528D390AE00DD7E27 /* LoginView.swift */,
 				7E2C6D2028D3C2C200DD7E27 /* MainMessages */,
 			);
 			path = Core;

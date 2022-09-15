@@ -14,11 +14,31 @@ struct MainMessagesView: View {
     @ObservedObject private var vm = MainMessagesViewModel()
     
 // MARK: - BODY
+
+    var body: some View {
+        NavigationView {
+
+            VStack {
+                
+                //Text("USER: \(vm.chatUser?.profileImageUrl ?? "")")
+                customNavBar
+                messagesView
+            }
+            .overlay(
+                newMessageButton, alignment: .bottom)
+            .navigationBarHidden(true)
+        }
+    }
+    
     private var customNavBar: some View {
         HStack(spacing: 16) {
-
+            
+            WebImage(url: URL(string: vm.chatUser?.profileImageUrl ?? ""))
+            
+            //Text("USER: \(vm.chatUser?.profileImageUrl ?? "")")
+            
             Image(systemName: "person.fill")
-                .font(.system(size: 34, weight: .heavy))
+                .font(.system(size: 34))
 
             VStack(alignment: .leading, spacing: 4) {
                 Text("\(vm.chatUser?.email ?? "")")
@@ -55,18 +75,6 @@ struct MainMessagesView: View {
         }
     }
 
-    var body: some View {
-        NavigationView {
-
-            VStack {
-                customNavBar
-                messagesView
-            }
-            .overlay(
-                newMessageButton, alignment: .bottom)
-            .navigationBarHidden(true)
-        }
-    }
 
     private var messagesView: some View {
         ScrollView {
@@ -119,6 +127,8 @@ struct MainMessagesView: View {
                 .shadow(radius: 15)
         }
     }
+    
+    
 }
 
 struct MainMessagesView_Previews: PreviewProvider {

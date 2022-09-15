@@ -40,6 +40,8 @@ class MainMessagesViewModel: ObservableObject {
             let email = data["email"] as? String ?? ""
             let profileImageUrl = data["profileImageUrl"] as? String ?? ""
             self.chatUser = ChatUser(uid: uid, email: email, profileImageUrl: profileImageUrl)
+            
+            //print("DEBUG: USER IMAGE \(self.chatUser?.profileImageUrl)")
         }
     }
 
