@@ -5,9 +5,9 @@
 //  Created by PDWS on 9/15/22.
 //
 
-import Foundation
+import FirebaseFirestoreSwift
 
-struct ChatUser {
+struct ChatUser: Codable, Identifiable {
+    @DocumentID var id: String?
     let uid, email, profileImageUrl: String
 }
-
